@@ -8,7 +8,7 @@ export default function Alunos(){
         <div className='aluno-container'>
             <header>
                 <span>Bem vinde, <strong>Rafael</strong>!</span>
-                <Link className='button' to="aluno/novo">Novo Aluno</Link>
+                <Link className='button' to="/aluno/novo/0">Novo Aluno</Link>
                 <button type="button">
                     <FiXCircle size={35} color="#17202a"/>
                 </button>
@@ -19,7 +19,7 @@ export default function Alunos(){
                     Filtrar aluno por nome (parcial)
                 </button>
             </form>
-            <h1>Realação de Alunos</h1>
+            <h1>Relação de Alunos</h1>
             <ul>
                 <li>
                     <b>Nome:</b>Rafael<br/><br/>
