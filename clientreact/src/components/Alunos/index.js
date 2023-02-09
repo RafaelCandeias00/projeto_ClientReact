@@ -61,6 +61,18 @@ export default function Alunos() {
         }
     }
 
+    async function deleteAluno(id){
+        try{
+            if(window.confirm(`Deseja deletar o aluno de id ${id}?`)){
+                await api.delete(`/alunos/${id}`, authorization);
+                setAlunos(alunos.filter(aluno => aluno.id !== id));
+            }
+        }catch(error){
+            alert('Não foi possível excluir o aluno');
+        }
+
+    }
+
     return (
         <div className='aluno-container'>
             <header>
@@ -108,7 +120,7 @@ export default function Alunos() {
                             <button onClick={() => editAluno(aluno.alunoId)} type="button">
                                 <FiEdit size={25} color="#17202a" />
                             </button>
-                            <button type="button">
+                            <button onClick={() => deleteAluno(aluno.alunoId)} type="button">
                                 <FiUserX size={25} color="#17202a" />
                             </button>
                         </li>
